@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Comfortaa', cursive;
+    background: gray;
+}
+.menu{
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: #3e3e41a2;
+}
+.nav input:checked ~ .menu {
+    width: 28vw;
+}
+.menu li {
+    padding: 2rem;
+    list-style: none;
+}
+.menu li a {
+    text-decoration: none;
+    color: rgb(166, 245, 39);
+    font-weight: 600;
+    font-size: 1.8rem;
+    transition: 1s;
+}
+.menu li:hover {
+    color: #a3d49c;
+}
+input {
+    width: 3rem;
+    height: 40px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+.line {
+    position: absolute;
+    margin-left: 0.5rem;
+    top: 20px;
+    left: 0;
+    width: 40px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: rgb(166, 245, 39);
+    pointer-events: none;
+    transition: 1s;
+}
+
+.nav input:checked ~ .line {
+    background-color: rgb(166, 245, 39);
+}
+
+.nav .line:nth-child(3) {
+    transform: translateY(10px);
+}
+
+input:checked ~ .line:nth-child(2) {
+    transform:   rotate(45deg);
+  }
+
+input:checked ~ .line:nth-child(3) {
+    transform:  rotate(-45deg);
+}
+
+/* 398 */
+@media screen and (max-height: 400px) {
+    .menu{
+        height: 398px;
+    }
+    .menu li {
+        padding: 1rem;
+    }
+    .menu li a{
+        font-size: 1rem;
+    }
+}

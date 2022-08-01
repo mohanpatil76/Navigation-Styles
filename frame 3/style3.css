@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #ffadc1c7;
+}
+body, .nav, .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav {
+    padding: 1.5rem;
+    position: relative;
+    background-color: #fff;
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: 0 3px 9px rgba(65, 64, 64, 0.2),
+    0 8px 15px rgba(0,0,0,.2);
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.nav input:checked ~ .menu {
+    width: 430px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 0.7rem;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 600;
+    font-size: 1.4rem;
+    transition: 1s;
+}
+.menu li a:hover {
+    color: #f974a1;
+}
+input {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+}
+.line {
+    position: absolute;
+    left: 28px;
+    width: 40px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #666;
+    pointer-events: none;
+    transition: 1s;
+}
+
+.nav input:checked ~ .line {
+    background-color: #f974a1;
+}
+
+.nav .line:nth-child(2) {
+    transform: translateY(-10px);
+}
+
+.nav .line:nth-child(3) {
+    transform: translateY(10px);
+}
